@@ -32,11 +32,18 @@ export const ContactList = () => {
       <div className={css.listWrap}>
         {allContacts ? (
           <ul className={css.list}>
-            {visibleContacts.map(contact => (
-              <li key={contact.id} className={css.item}>
-                <Contact contact={contact} />
-              </li>
-            ))}
+            {visibleContacts.length > 0 ? (
+              visibleContacts.map(contact => (
+                <li key={contact.id} className={css.item}>
+                  <Contact contact={contact} />
+                </li>
+              ))
+            ) : (
+              <p className={css.noContactsYet}>
+                There are no contacts in your PhoneBook yet. Please, use the
+                form above to add your first contact!
+              </p>
+            )}
           </ul>
         ) : (
           <ul className={css.list}>
@@ -47,7 +54,7 @@ export const ContactList = () => {
                 </li>
               ))
             ) : (
-              <p className={css.notInFavourites}>
+              <p className={css.noContactsYet}>
                 You haven`t added any contacts to your favorites yet
               </p>
             )}
