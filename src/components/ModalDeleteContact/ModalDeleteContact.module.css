@@ -1,0 +1,86 @@
+.wrap {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.icon {
+  color: var(--bl-grey);
+}
+
+.text {
+  font-size: 20px;
+  color: rgb(187, 181, 181);
+  letter-spacing: 0.02em;
+}
+
+.accentWord {
+  color: white;
+  font-weight: 600;
+}
+
+.btnsWrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn {
+  background-color: transparent;
+  padding: 5px 15px;
+  height: 40px;
+  width: 95px;
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
+  opacity: 1;
+  font-size: 18px;
+
+  transition: opacity 250ms var(--cubicBezier);
+}
+
+.btnCancel {
+  background-color: var(--bl-grey);
+}
+
+.btnCancel:is(:hover, :focus) {
+  opacity: 0.8;
+}
+
+.btnConfirm {
+  position: relative;
+  border: 1.5px solid green;
+  color: green;
+  transition: color 0.3s 0.1s ease-out;
+}
+
+.btnConfirm::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: '';
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -133px;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
+
+.btnConfirm:hover {
+  color: #fff;
+  border: 1px solid green;
+}
+
+.btnConfirm:hover::before {
+  box-shadow: inset 0 0 0 10em green;
+}

@@ -1,0 +1,8 @@
+.header {
+  border-bottom: 1px solid rgba(215, 199, 199, 0.5);
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+}

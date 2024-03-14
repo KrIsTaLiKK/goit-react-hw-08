@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoIcon {
+  color: var(--blue);
+  line-height: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Lora', sans-serif;
+  font-size: 25px;
+  margin-right: 70px;
+  padding: 20px 0;
+}

@@ -1,0 +1,80 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  gap: 30px;
+  width: 450px;
+  margin: 0 auto;
+}
+
+.fieldGroup {
+  position: relative;
+  width: 100%;
+}
+
+.formInput {
+  width: 100%;
+  padding: 15px 16px;
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 25px;
+  box-shadow: inset 2px 5px 10px rgb(132, 128, 128);
+  outline: none;
+  padding: 10px 15px;
+  height: 50px;
+  font-size: 18px;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  display: block;
+  margin-bottom: 5px;
+  color: rgba(249, 249, 249, 0.7);
+  font-weight: 500;
+  font-size: 18px;
+  transition: 0.5s;
+
+  transform: translateY(-50%);
+}
+
+.formInput:focus-within + .label,
+.formInput:not(:placeholder-shown) + .label {
+  top: -10px;
+  font-size: 14px;
+}
+
+.submitBtn {
+  width: 25%;
+  height: 40px;
+  margin-left: auto;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: transparent;
+  box-shadow: inset 2px 5px 10px rgb(79, 74, 74),
+    rgba(79, 74, 74, 0.5) 0px 20px 25px -5px,
+    rgba(79, 74, 74, 0.5) 0px 10px 10px -5px;
+  color: white;
+  outline: transparent;
+
+  transition: box-shadow 250ms var(--cubicBezier);
+}
+
+.submitBtn:is(:hover, :focus) {
+  box-shadow: inset 2px 5px 10px rgb(14, 7, 217),
+    rgba(14, 7, 217, 0.5) 0px 20px 25px -5px,
+    rgba(14, 7, 217, 0.5) 0px 10px 10px -5px;
+}
+
+.error {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  color: red;
+  margin-top: 5px;
+  right: 15px;
+}

@@ -1,0 +1,61 @@
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import {
+  selectVisibleFavouriteContacts,
+  selectAllVisibleContacts,
+} from '../../redux/contacts/selectors';
+
+import Contact from '../Contact/Contact';
+import SwitchContacts from '../SwitchContacts/SwitchContacts';
+
+import css from './ContactList.module.css';
+
+export const ContactList = () => {
+  const visibleContacts = useSelector(selectAllVisibleContacts);
+  const favouriteContacts = useSelector(selectVisibleFavouriteContacts);
+  const [allContacts, setAllContacts] = useState(true);
+
+  const wordContacts = visibleContacts.length === 1 ? 'contact' : 'contacts';
+
+  return (
+    <div className={css.wrap}>
+      <h2 className={css.title}>Contacts</h2>
+      <div className={css.totalContactsWrap}>
+        <p className={css.totalContacts}>
+          You have {visibleContacts.length} {wordContacts}
+        </p>
+      </div>
+      <SwitchContacts
+        allContacts={allContacts}
+        setAllContacts={setAllContacts}
+      />
+      <div className={css.listWrap}>
+        {allContacts ? (
+          <ul className={css.list}>
+            {visibleContacts.map(contact => (
+              <li key={contact.id} className={css.item}>
+                <Contact contact={contact} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <ul className={css.list}>
+            {favouriteContacts.length > 0 ? (
+              favouriteContacts.map(contact => (
+                <li key={contact.id} className={css.item}>
+                  <Contact contact={contact} />
+                </li>
+              ))
+            ) : (
+              <p className={css.notInFavourites}>
+                You haven`t added any contacts to your favorites yet
+              </p>
+            )}
+          </ul>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default ContactList;

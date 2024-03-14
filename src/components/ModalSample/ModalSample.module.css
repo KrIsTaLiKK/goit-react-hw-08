@@ -1,0 +1,38 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  padding: 50px 0;
+  outline: none;
+  background: linear-gradient(#0c0c0c, #2b2a2a) padding-box;
+  border-radius: 16px;
+  transform: translate(-50%, -50%);
+  animation: shadow 2000ms infinite ease-in-out;
+}
+
+@keyframes shadow {
+  from {
+    box-shadow: 0px 0px 4px 0px rgba(23, 101, 247, 0.5);
+  }
+  50% {
+    box-shadow: 0px 0px 10px 4px rgba(23, 101, 247, 0.5);
+  }
+  to {
+    box-shadow: 0px 0px 4px 0px rgba(23, 101, 247, 0.5);
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(28, 27, 27, 0.5);
+}

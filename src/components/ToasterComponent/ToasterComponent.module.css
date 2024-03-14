@@ -1,0 +1,8 @@
+.toast {
+  background-color: var(--grey);
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid rgb(28, 28, 177);
+}

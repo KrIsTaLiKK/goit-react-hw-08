@@ -1,0 +1,35 @@
+.authList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.linkWrap {
+  min-width: 90px;
+
+  border: 1px solid rgba(215, 199, 199, 0.5);
+}
+
+.link {
+  display: block;
+  padding: 10px 15px;
+  font-size: 18px;
+  background-color: #212121;
+
+  transition: background-color 250ms var(--cubicBezier);
+}
+
+.link:is(:hover, :focus) {
+  background-color: var(--bl-grey);
+}
+
+.loginLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  color: rgb(2, 194, 2);
+}
