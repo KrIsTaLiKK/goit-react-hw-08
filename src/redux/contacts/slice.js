@@ -23,6 +23,12 @@ const removeContactFromList = (contacts, idToRemove) => {
   return contacts.filter(contact => contact.id !== idToRemove);
 };
 
+const changeContactInList = (contacts, changeContact) => {
+  return contacts.map(contact =>
+    contact.id === changeContact.id ? changeContact : contact
+  );
+};
+
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
@@ -79,9 +85,10 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.rejected, handleRejected)
       .addCase(changeContact.fulfilled, (state, action) => {
         const changedContact = action.payload;
-
-        state.items = state.items.map(item =>
-          item.id === changedContact.id ? changedContact : item
+        state.items = changeContactInList(state.items, changedContact);
+        state.favouriteContacts = changeContactInList(
+          state.favouriteContacts,
+          changedContact
         );
       })
       .addCase(logOut.fulfilled, state => {
