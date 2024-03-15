@@ -3,12 +3,17 @@ import ModalSample from '../ModalSample/ModalSample';
 import { deleteContact } from '../../redux/contacts/operations';
 
 import { RiDeleteBin6Fill } from 'react-icons/ri';
+import toast from 'react-hot-toast';
 import clsx from 'clsx';
 import css from './ModalDeleteContact.module.css';
-import toast from 'react-hot-toast';
+import { useEffect } from 'react';
 
 const ModalDeleteContact = ({ isOpen, setIsOpen, id }) => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log(isOpen);
+  }, [isOpen]);
 
   const handleDeleteContact = () => {
     dispatch(deleteContact(id))
@@ -19,7 +24,9 @@ const ModalDeleteContact = ({ isOpen, setIsOpen, id }) => {
           'An error occurred while deleting the contact. Please, try again!'
         )
       )
-      .finally(setIsOpen(false));
+      .finally(() => {
+        setIsOpen(false);
+      });
   };
 
   return (
@@ -44,7 +51,7 @@ const ModalDeleteContact = ({ isOpen, setIsOpen, id }) => {
             onClick={handleDeleteContact}
             className={clsx(css.btn, css.btnConfirm)}
           >
-            <span>Confirm</span>
+            Confirm
           </button>
         </div>
       </div>
