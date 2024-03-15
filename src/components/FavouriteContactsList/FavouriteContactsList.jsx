@@ -5,6 +5,7 @@ import css from './FavouriteContactsList.module.css';
 
 const FavouriteContactsList = () => {
   const favouriteContacts = useSelector(selectVisibleFavouriteContacts);
+
   return (
     <ul className={css.list}>
       {favouriteContacts.length > 0 ? (

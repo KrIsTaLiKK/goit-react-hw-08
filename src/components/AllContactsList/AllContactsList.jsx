@@ -6,6 +6,7 @@ import css from './AllContactsList.module.css';
 
 const AllContactsList = () => {
   const visibleContacts = useSelector(selectAllVisibleContacts);
+
   return (
     <ul className={css.list}>
       {visibleContacts.length > 0 ? (
@@ -16,8 +17,7 @@ const AllContactsList = () => {
         ))
       ) : (
         <p className={css.noContactsYet}>
-          There are no contacts in your PhoneBook yet. Please, use the form
-          above to add your first contact!
+          There are no contacts in your PhoneBook with this name.
         </p>
       )}
     </ul>

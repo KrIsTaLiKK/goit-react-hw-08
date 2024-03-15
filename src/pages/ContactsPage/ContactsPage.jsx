@@ -26,7 +26,10 @@ const ContactsPage = () => {
     <Section>
       <HelmetComponent>Contacts</HelmetComponent>
       <div className={css.container}>
-        <h1 className={css.mainTitle}>Add new contact in your PhoneBook</h1>
+        <h1 className={css.mainTitle}>
+          Add new contact in your Phone
+          <span className={css.accentWord}>Book</span>
+        </h1>
         <ContactForm />
 
         <SearchBox />
