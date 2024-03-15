@@ -28,8 +28,8 @@ const ModalDeleteContact = ({ isOpen, setIsOpen, id }) => {
         <RiDeleteBin6Fill size={60} className={css.icon} />
         <p className={css.text}>
           Do you really want to delete this contact? If you press
-          <span className={css.accentWord}> "Confirm"</span>, the contact will
-          be permanently deleted from your PhoneBook.
+          <span className={css.accentWord}> &quot;Confirm&quot;</span>, the
+          contact will be permanently deleted from your PhoneBook.
         </p>
         <div className={css.btnsWrap}>
           <button

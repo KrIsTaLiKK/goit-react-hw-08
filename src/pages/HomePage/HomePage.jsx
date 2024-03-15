@@ -8,7 +8,9 @@ const HomePage = () => {
     <Section>
       <HelmetComponent>PhoneBook</HelmetComponent>
       <div className={css.wrap}>
-        <h1 className={css.title}>Welcome to Phonebook</h1>
+        <h1 className={css.title}>
+          Welcome to Phone<span className={css.accentWord}>Book</span> App!
+        </h1>
         <div className={css.btnWrap}>
           <NavLink to="./login" className={css.btnLogin}>
             Log in

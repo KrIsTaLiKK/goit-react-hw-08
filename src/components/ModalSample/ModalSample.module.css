@@ -1,3 +1,7 @@
+body.modalOpen {
+  overflow: hidden;
+}
+
 .content {
   display: flex;
   align-items: center;
@@ -8,7 +12,7 @@
   top: 50%;
   left: 50%;
   width: 500px;
-  padding: 50px 0;
+  padding: 60px 0;
   outline: none;
   background: linear-gradient(#0c0c0c, #2b2a2a) padding-box;
   border-radius: 16px;

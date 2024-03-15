@@ -1,0 +1,23 @@
+.cancelBtn {
+  position: absolute;
+  bottom: 60px;
+  right: 160px;
+  width: 25%;
+  height: 40px;
+  margin-left: auto;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: transparent;
+  box-shadow: inset 2px 5px 10px rgb(79, 74, 74),
+    rgba(79, 74, 74, 0.5) 0px 20px 25px -5px,
+    rgba(79, 74, 74, 0.5) 0px 10px 10px -5px;
+  color: white;
+  outline: transparent;
+
+  transition: box-shadow 250ms var(--cubicBezier);
+}
+
+.cancelBtn:is(:hover, :focus) {
+  opacity: 0.8;
+  color: red;
+}

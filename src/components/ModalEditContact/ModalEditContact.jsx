@@ -5,6 +5,7 @@ import FormSample from '../FormSample/FormSample';
 
 import ModalSample from '../ModalSample/ModalSample';
 import toast from 'react-hot-toast';
+import css from './ModalEditContact.module.css';
 
 const ModalEditContact = ({ isOpen, setIsOpen, id, name, number }) => {
   const dispatch = useDispatch();
@@ -33,6 +34,9 @@ const ModalEditContact = ({ isOpen, setIsOpen, id, name, number }) => {
         initialValues={initialValues}
         btnSubmit="Edit contact"
       />
+      <button className={css.cancelBtn} onClick={() => setIsOpen(false)}>
+        Cancel
+      </button>
     </ModalSample>
   );
 };

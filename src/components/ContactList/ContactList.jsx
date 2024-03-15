@@ -9,10 +9,12 @@ import Contact from '../Contact/Contact';
 import SwitchContacts from '../SwitchContacts/SwitchContacts';
 
 import css from './ContactList.module.css';
+import AllContactsList from '../AllContactsList/AllContactsList';
+import FavouriteContactsList from '../FavouriteContactsList/FavouriteContactsList';
 
 export const ContactList = () => {
   const visibleContacts = useSelector(selectAllVisibleContacts);
-  const favouriteContacts = useSelector(selectVisibleFavouriteContacts);
+
   const [allContacts, setAllContacts] = useState(true);
 
   const wordContacts = visibleContacts.length === 1 ? 'contact' : 'contacts';
@@ -30,36 +32,7 @@ export const ContactList = () => {
         setAllContacts={setAllContacts}
       />
       <div className={css.listWrap}>
-        {allContacts ? (
-          <ul className={css.list}>
-            {visibleContacts.length > 0 ? (
-              visibleContacts.map(contact => (
-                <li key={contact.id} className={css.item}>
-                  <Contact contact={contact} />
-                </li>
-              ))
-            ) : (
-              <p className={css.noContactsYet}>
-                There are no contacts in your PhoneBook yet. Please, use the
-                form above to add your first contact!
-              </p>
-            )}
-          </ul>
-        ) : (
-          <ul className={css.list}>
-            {favouriteContacts.length > 0 ? (
-              favouriteContacts.map(contact => (
-                <li key={contact.id} className={css.item}>
-                  <Contact contact={contact} />
-                </li>
-              ))
-            ) : (
-              <p className={css.noContactsYet}>
-                You haven`t added any contacts to your favorites yet
-              </p>
-            )}
-          </ul>
-        )}
+        {allContacts ? <AllContactsList /> : <FavouriteContactsList />}
       </div>
     </div>
   );

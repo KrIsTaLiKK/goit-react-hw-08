@@ -3,11 +3,11 @@ import { lazy, useEffect } from 'react';
 import { useAuth } from '../../hooks';
 import { useDispatch } from 'react-redux';
 import Layout from '../Layout/Layout';
+import ToasterComponent from '../ToasterComponent/ToasterComponent';
 import { refreshUser } from '../../redux/auth/operations';
 import RestrictedRoute from '../RestrictedRoute';
 import { PrivateRoute } from '../PrivateRoute';
 import Loader from '../Loader/Loader';
-import { ToasterComponent } from '../ToasterComponent/ToasterComponent';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const RegisterPage = lazy(() =>

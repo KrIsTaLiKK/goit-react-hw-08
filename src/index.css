@@ -11,6 +11,7 @@ body {
   font-family: 'Montserrat';
   color: var(--white);
   background-color: black;
+  letter-spacing: 0.04em;
 }
 
 h1,

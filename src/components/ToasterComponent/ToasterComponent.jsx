@@ -1,12 +1,20 @@
 import { Toaster } from 'react-hot-toast';
-import css from './ToasterComponent.module.css';
 
-export const ToasterComponent = () => {
+const ToasterComponent = () => {
   return (
     <Toaster
       toastOptions={{
-        className: `${css.toast}`,
+        style: {
+          background: '#1f222f',
+          border: '1px solid rgb(28, 28, 177)',
+          padding: '20px',
+          color: '#ffffff',
+          fontSize: '20px',
+          textAlign: 'center',
+        },
       }}
     />
   );
 };
+
+export default ToasterComponent;
